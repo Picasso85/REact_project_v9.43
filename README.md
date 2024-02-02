@@ -19,3 +19,7 @@ The app is available on both iOS and Android platforms.
 An active internet connection is required to access the full range of features.
 Contact:
 If you have any questions, suggestions, or issues with the app, please contact us at pauladamskiblabla@gijiji.srum.
+![Screenshot 2024-02-02 195030](https://github.com/Picasso85/REact_Eind_project_v9.43/assets/93282468/576914c6-c603-4039-b534-6795ff8c5236)
+![Screenshot 2024-02-02 195058](https://github.com/Picasso85/REact_Eind_project_v9.43/assets/93282468/77f50490-9d6e-49db-b9e1-2537bd8a7efc)
+![Screenshot 2024-02-02 195128](https://github.com/Picasso85/REact_Eind_project_v9.43/assets/93282468/020c52e1-fa3c-41ed-9e40-253f52ce154c)
+![Screenshot 2024-02-02 195213](https://github.com/Picasso85/REact_Eind_project_v9.43/assets/93282468/307feeae-ce4a-4e0f-9033-7c60e96c242d)

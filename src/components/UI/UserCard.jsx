@@ -1,7 +1,7 @@
 import { useContext } from "react";
 import { EventsContext } from "../../Context";
 import { Flex, Heading, Image } from "@chakra-ui/react";
-import usersData from "../events.json";
+
 
 export const UserCard = ({ userId }) => {
   const { users } = useContext(EventsContext);

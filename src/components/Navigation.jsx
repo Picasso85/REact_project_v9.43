@@ -4,12 +4,22 @@ import { Link } from "react-router-dom";
 
 export const Navigation = () => {
   return (
-    <Flex flexDirection="row" gap={4} position="fixed" top={1} padding={2}>
+    <Flex
+      as="nav"
+      flexDirection="row"
+      gap={4}
+      position="fixed"
+      top={0}
+      width="100%"
+      padding={2}
+      backgroundColor="gray.800" 
+      zIndex={999} 
+    >
       <Link to="/">
-        <Button>Home</Button>
+        <Button size="xs" colorScheme="whiteAlpha">Home</Button>
       </Link>
       <Link to="/new">
-        <Button>Add a new event</Button>
+        <Button size="xs" colorScheme="whiteAlpha">Add a new event</Button>
       </Link>
     </Flex>
   );

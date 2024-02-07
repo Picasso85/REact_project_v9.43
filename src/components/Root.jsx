@@ -7,6 +7,7 @@ import "@fontsource/pacifico";
 import "@fontsource/open-sans";
 import { Footer } from "./UI/Footer";
 
+
 export const loader = async () => {
   const users = await fetch("http://localhost:3000/users");
   const categories = await fetch("http://localhost:3000/categories");
@@ -28,10 +29,11 @@ export const Root = () => {
       height="100%"
       bgPosition="center"
       zIndex={-1}
+      
     >
       <Heading
         fontSize="4xl"
-        color="Black"
+        color="gray"
         textAlign="left"
         padding={4}
         position="fixed"

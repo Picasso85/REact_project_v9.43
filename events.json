@@ -64,6 +64,17 @@
       "location": "Shavasana Yoga School",
       "startTime": "2023-03-09T06:00:00.000Z",
       "endTime": "2023-03-09T07:00:00.000Z"
+    },
+    {
+      "id": "fe64",
+      "title": "dsfgsdfgsd",
+      "description": "hdfghdfg",
+      "image": "https://images.pexels.com/photos/20107913/pexels-photo-20107913/free-photo-of-milosc-sztuka-lato-ogrod.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      "startTime": "2024-02-07T19:27",
+      "endTime": "2024-02-15T19:27",
+      "location": "Oss",
+      "categoryIds": "2",
+      "createdBy": "1"
     }
   ],
   "categories": [

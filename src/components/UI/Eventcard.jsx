@@ -15,7 +15,7 @@ export const EventCard = ({ event }) => {
       opacity: 0.9,
       transform: "scale(.95)",
       filter: "auto",
-      blur: "0.5px",
+      blur: "0.4px",
     }}
     >
       <Image

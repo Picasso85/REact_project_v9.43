@@ -64,7 +64,7 @@ export const EventSearch = ({ events }) => {
           top="80px"
           color="black"
         >
-          <RadioGroup onChange={setValue} value={value} colorScheme="pink">
+          <RadioGroup onChange={setValue} value={value} colorScheme="blue">
             <Flex direction="row" gap={4} wrap="wrap" justifyContent="center">
               <Radio value="all">All</Radio>
               <Radio value="1">Sports</Radio>

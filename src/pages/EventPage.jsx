@@ -9,6 +9,7 @@ import { EditEvent } from "../components/UI/EditEvent";
 // Loader function to fetch event data
 export const loader = async ({ params }) => {
   const event = await fetch(`http://localhost:3000/events/${params.eventId}`);
+
   return {
     event: await event.json(),
   };
@@ -29,19 +30,17 @@ export const EventPage = () => {
     <Flex height="100vh" width="100vw" align="center" justify="center">
       {/* Event details container */}
       <Flex
-        bg="white"
+        bg="White"
         align="center"
         justify="center"
         direction="column"
         minWidth="280px"
-        maxW="20vw"
+        maxW="25vw"
+        maxH="25hw"
         paddingBottom={4}
         gap={4}
         borderRadius={10}
         zIndex={1}
-        _hover={{
-          transform: "scale(1.1)",
-        }}
       >
         {/* Event image */}
         <Image
@@ -55,7 +54,6 @@ export const EventPage = () => {
         {/* Event title and description */}
         <Heading
           align="center"
-          justify="center"
         >{event.title}</Heading>
         <Text fontWeight="bold">{event.description}</Text>
 
@@ -71,15 +69,13 @@ export const EventPage = () => {
           <Text>
             🕑 {start} - {end}
           </Text>
-          <Text align="center">📍{event.location}</Text>
+          <Text align="center">📍 {event.location}</Text>
           {/* Display event category */}
           <CategoryCard event={event} />
         </Flex>
 
         {/* Event creator details */}
-        <Flex 
-        padding={2}
-        zIndex={5}>
+        <Flex padding={2}>
           <UserCard userId={event.createdBy} />
         </Flex>
 

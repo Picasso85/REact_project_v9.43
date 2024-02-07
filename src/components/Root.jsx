@@ -28,6 +28,7 @@ export const Root = () => {
       bgAttachment="fixed"
       height="100%"
       bgPosition="center"
+      bgColor={"gray.700"}
       zIndex={-1}
       
     >

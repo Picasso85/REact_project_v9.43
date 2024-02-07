@@ -9,7 +9,6 @@ import { EditEvent } from "../components/UI/EditEvent";
 // Loader function to fetch event data
 export const loader = async ({ params }) => {
   const event = await fetch(`http://localhost:3000/events/${params.eventId}`);
-
   return {
     event: await event.json(),
   };
@@ -30,31 +29,27 @@ export const EventPage = () => {
     <Flex height="100vh" width="100vw" align="center" justify="center">
       {/* Event details container */}
       <Flex
-        bg="White"
+        bg="white"
         align="center"
         justify="center"
         direction="column"
-        minWidth="280px"
-        maxW="25vw"
-        maxH="25hw"
-        paddingBottom={4}
-        gap={4}
+        maxWidth="90vw" // Changed max width
+        paddingY={8} // Added padding top and bottom
         borderRadius={10}
         zIndex={1}
+        boxShadow="0px 4px 8px rgba(0, 0, 0, 0.5)" // Added shadow for better visual separation
       >
         {/* Event image */}
         <Image
           src={event.image}
           alt={event.title}
-          width="100%"
-          height="100%"
-          borderTopRadius={6}
+          borderRadius="6rem 0 6rem 0" // Added border radius for top corners
+          maxWidth="100%" // Adjusted to maintain aspect ratio
+          height={"20vh"}
         />
 
         {/* Event title and description */}
-        <Heading
-          align="center"
-        >{event.title}</Heading>
+        <Heading>{event.title}</Heading>
         <Text fontWeight="bold">{event.description}</Text>
 
         {/* Event details */}
@@ -80,16 +75,13 @@ export const EventPage = () => {
         </Flex>
 
         {/* Edit, delete, and home button */}
-        <Flex gap={4} flexWrap="wrap" justifyContent="center">
+        <Flex gap={4} justifyContent="center">
           <EditEvent event={event} />
-          <Flex gap={4}>
-            <DeleteEvent event={event} />
-
-            {/* Link to navigate back to the home page */}
-            <Link to="/">
-              <Button size="sm">Home</Button>
-            </Link>
-          </Flex>
+          <DeleteEvent event={event} />
+          {/* Link to navigate back to the home page */}
+          <Link to="/">
+            <Button size="sm">Home</Button>
+          </Link>
         </Flex>
       </Flex>
     </Flex>

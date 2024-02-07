@@ -64,17 +64,6 @@
       "location": "Shavasana Yoga School",
       "startTime": "2023-03-09T06:00:00.000Z",
       "endTime": "2023-03-09T07:00:00.000Z"
-    },
-    {
-      "id": "7903",
-      "title": "dsfgsdfgsd",
-      "description": "hdfghdfg",
-      "image": "C:\\Users\\paula\\Desktop\\ReactAdvanced-main\\images",
-      "startTime": "2024-02-25T17:30",
-      "endTime": "2024-03-10T17:30",
-      "location": "Oss",
-      "categoryIds": "1",
-      "createdBy": "1"
     }
   ],
   "categories": [

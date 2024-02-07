@@ -34,11 +34,14 @@ export const EventPage = () => {
         justify="center"
         direction="column"
         minWidth="280px"
-        maxW="30vw"
+        maxW="20vw"
         paddingBottom={4}
         gap={4}
         borderRadius={10}
         zIndex={1}
+        _hover={{
+          transform: "scale(1.1)",
+        }}
       >
         {/* Event image */}
         <Image
@@ -50,7 +53,10 @@ export const EventPage = () => {
         />
 
         {/* Event title and description */}
-        <Heading>{event.title}</Heading>
+        <Heading
+          align="center"
+          justify="center"
+        >{event.title}</Heading>
         <Text fontWeight="bold">{event.description}</Text>
 
         {/* Event details */}
@@ -65,13 +71,15 @@ export const EventPage = () => {
           <Text>
             🕑 {start} - {end}
           </Text>
-          <Text align="center">📍 {event.location}</Text>
+          <Text align="center">📍{event.location}</Text>
           {/* Display event category */}
           <CategoryCard event={event} />
         </Flex>
 
         {/* Event creator details */}
-        <Flex padding={2}>
+        <Flex 
+        padding={2}
+        zIndex={5}>
           <UserCard userId={event.createdBy} />
         </Flex>
 

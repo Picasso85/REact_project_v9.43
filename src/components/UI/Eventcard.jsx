@@ -7,7 +7,17 @@ export const EventCard = ({ event }) => {
   const end = event.endTime.split("T")[1].slice(0, 5);
 
   return (
-    <Card variant="filled" paddingBottom={4} align="center">
+    <Card 
+    variant="filled" 
+    paddingBottom={4} 
+    align="center"
+    _hover={{
+      opacity: 0.9,
+      transform: "scale(.95)",
+      filter: "auto",
+      blur: "0.5px",
+    }}
+    >
       <Image
         src={event.image}
         alt={event.title}

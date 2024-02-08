@@ -33,7 +33,7 @@ export const EventCard = ({ event }) => {
         maxHeight="150px"
         borderTopRadius={6}
         transition="transform 0.3s ease"
-        _hover={{ transform: 'scale(1.05)' }} // Zwiększenie obrazu przy najechaniu
+        _hover={{ transform: 'scale(1.1)' }} // Zwiększenie obrazu przy najechaniu
       />
       <Heading padding={2} fontSize="lg">{event.title}</Heading>
       <Flex maxWidth="xs" wrap="wrap">

@@ -27,13 +27,14 @@ export const EventPage = () => {
 
   return (
     <motion.div
-  initial={{ x: "-100vw" }} // Początkowe położenie karty poza widokiem po lewej stronie
-  animate={{ x: 0 }} // Animacja przesunięcia karty w prawo do swojej pozycji końcowej
-  transition={{ duration: 0.5, type: "spring", stiffness: 120 }} // Konfiguracja animacji
+    style={{ overflowX: "hidden" }}
+    initial={{ x: "-100vw" }} 
+    animate={{ x: 0 }} 
+    transition={{ duration: 1, type: "spring", stiffness: 120 }} 
 >
     // Main container flexbox
     <Flex height="100vh" width="100vw" align="center" justify="center"
-    mb={14} mt={14}>
+    mb={8} mt={4}>
       {/* Event details container */}
       <Flex
         bg="white"
@@ -44,7 +45,7 @@ export const EventPage = () => {
         paddingY={8} // Added padding top and bottom
         borderRadius={10}
         //zIndex={1}
-        boxShadow="0px 4px 8px rgba(0, 0, 0, 0.5)" // Added shadow for better visual separation
+        boxShadow="0px 4px 8px rgba(0, 0, 0, 4)" // Added shadow for better visual separation
       >
         {/* Event image */}
         <Image

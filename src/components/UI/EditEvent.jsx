@@ -119,8 +119,7 @@ export const EditEvent = ({ event }) => {
               Change the information you want below.
               <br />
               <b>
-                Select a category and a user or else your changes will not be
-                made!
+                Select a category and ,a user name etc...
               </b>
             </Text>
 

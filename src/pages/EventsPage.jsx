@@ -22,7 +22,7 @@ export const EventsPage = () => {
 
   return (
     // Main container flexbox
-    <Flex>
+    <Flex style={{ overflowX: "hidden" }}>
       {/* Display the EventSearch component with the fetched events data */}
       <EventSearch events={events} />
     </Flex>

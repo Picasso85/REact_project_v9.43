@@ -1,4 +1,4 @@
-import { Form, useActionData } from "react-router-dom";
+import { Form } from "react-router-dom";
 import { Button, Stack, Input, Select, Heading, Text } from "@chakra-ui/react";
 import { useContext, useState } from "react";
 import { EventsContext } from "../../Context";
@@ -11,12 +11,11 @@ import {
   ModalBody,
   ModalCloseButton,
   useDisclosure,
+  useToast
 } from "@chakra-ui/react";
-import { useToast } from "@chakra-ui/react";
 
-// Send request to edit event
 export const action = async ({ request, params }) => {
-  const formData = Object.fromEntries(await request.formData());
+  const formData = Object.fromEntries(request.entries());
   const response = await fetch(
     `http://localhost:3000/events/${params.eventId}`,
     {
@@ -32,47 +31,46 @@ export const EditEvent = ({ event }) => {
   const [succesfulUpdate, setSuccesfulUpdate] = useState(false);
   const { isOpen, onOpen, onClose } = useDisclosure();
   const { users, categories } = useContext(EventsContext);
-  const response = useActionData();
   const toast = useToast();
-  const refreshpage = () => {
-    window.location.reload(false);
-  };
 
-  if (succesfulUpdate === false && response != undefined) {
-    switch (response) {
-      case 200:
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+
+    const formData = new FormData(event.target);
+    const eventId = event.target.getAttribute("data-event-id");
+
+    try {
+      const response = await action({ request: formData, params: { eventId } });
+      if (response === 200) {
+        setSuccesfulUpdate(true);
         toast({
           title: "Success!",
-          description: "Your event is updated succesfully",
+          description: "Your event has been updated successfully",
           status: "success",
           duration: 3000,
           isClosable: true,
         });
-        setSuccesfulUpdate(true);
-        break;
-      case 404:
+      } else {
         toast({
-          title: "Oops",
-          description: `The event you tried to update cannot be found ${response} `,
+          title: "Error",
+          description: `An error occurred while updating the event (Status: ${response})`,
           status: "error",
           duration: 3000,
           isClosable: true,
         });
-        break;
-      case undefined:
-        break;
-      default:
-        toast({
-          title: "Woah",
-          description: `Something happened! Not sure what "${response}" means though...`,
-          status: "warning",
-          duration: 3000,
-          isClosable: true,
-        });
+      }
+    } catch (error) {
+      console.error("Error updating event:", error);
+      toast({
+        title: "Error",
+        description: "An error occurred while updating the event",
+        status: "error",
+        duration: 3000,
+        isClosable: true,
+      });
     }
-  }
+  };
 
-  // Format dates in events.json before editing
   const massageDates = (date) => {
     const dateJson = JSON.stringify(date);
     if (dateJson.includes("00.000Z")) {
@@ -82,24 +80,23 @@ export const EditEvent = ({ event }) => {
     }
   };
 
+  const refreshpage = () => {
+    window.location.reload(false);
+  };
+
   return (
-    // Switch edit button from edit to refresh, to reset actiondata and prevent wrongful toasts
     <>
       {succesfulUpdate ? (
         <Button
           size="sm"
-          onClick={() => {
-            refreshpage();
-          }}
+          onClick={refreshpage}
         >
           Refresh to make another edit
         </Button>
       ) : (
         <Button
           size="sm"
-          onClick={() => {
-            onOpen();
-          }}
+          onClick={onOpen}
         >
           Edit
         </Button>
@@ -123,27 +120,27 @@ export const EditEvent = ({ event }) => {
               </b>
             </Text>
 
-            <Form method="patch" id="edit-event-form">
+            <Form method="patch" id="edit-event-form" onSubmit={handleSubmit} data-event-id={event.id}>
               <Stack spacing={3}>
                 <Input
                   placeholder="Event title"
                   type="text"
                   name="title"
-                  required="required"
+                  required
                   defaultValue={event.title}
                 />
                 <Input
                   placeholder="Description"
                   type="text"
                   name="description"
-                  required="required"
+                  required
                   defaultValue={event.description}
                 />
                 <Input
                   placeholder="Image url"
                   type="url"
                   name="image"
-                  required="required"
+                  required
                   defaultValue={event.image}
                 />
                 <Input
@@ -151,7 +148,7 @@ export const EditEvent = ({ event }) => {
                   variant="outline"
                   placeholder="Start time"
                   name="startTime"
-                  required="required"
+                  required
                   defaultValue={massageDates(event.startTime)}
                 />
                 <Input
@@ -159,54 +156,35 @@ export const EditEvent = ({ event }) => {
                   variant="outline"
                   placeholder="End time"
                   name="endTime"
-                  required="required"
+                  required
                   defaultValue={massageDates(event.endTime)}
                 />
                 <Input
                   placeholder="Location"
                   type="text"
                   name="location"
-                  required="required"
+                  required
                   defaultValue={event.location}
                 />
 
-                <Select
-                  placeholder="Category"
-                  name="categoryIds"
-                  required="required"
-                >
-                  {categories.map((category) => {
-                    return (
-                      <option
-                        value={category.id}
-                        key={category.id}
-                        type="number"
-                      >
-                        {category.name}
-                      </option>
-                    );
-                  })}
+                <Select placeholder="Category" name="categoryIds" required>
+                  {categories.map((category) => (
+                    <option value={category.id} key={category.id}>
+                      {category.name}
+                    </option>
+                  ))}
                 </Select>
 
-                <Select
-                  placeholder="Select user"
-                  name="createdBy"
-                  required="required"
-                >
-                  {users.map((user) => {
-                    return (
-                      <option value={user.name.id} key={user.name.id} type="number">
-                        {user.name}
-                      </option>
-                    );
-                  })}
+                <Select placeholder="Select user" name="createdBy" required>
+                  {users.map((user) => (
+                    <option value={user.id} key={user.id}>
+                      {user.name}
+                    </option>
+                  ))}
                 </Select>
+
                 <Button
                   type="submit"
-                  variant="ghost"
-                  onClick={() => {
-                    onClose();
-                  }}
                 >
                   Submit
                 </Button>

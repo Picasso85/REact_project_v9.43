@@ -26,7 +26,7 @@
       "endTime": "2023-03-10T17:00:00.000Z"
     },
     {
-      "id": "2",
+      "id": 2,
       "createdBy": 1,
       "title": "Laser Tag mania",
       "description": "Let's play laser tag!",
@@ -39,18 +39,15 @@
       "endTime": "2023-04-06T17:46"
     },
     {
-      "id": "3",
-      "createdBy": 2,
       "title": "Badminton game",
       "description": "Hit that shuttle!",
       "image": "https://s3.eu-west-2.amazonaws.com/ws-activestirling/production/Badminton/_1200x630_crop_center-center_none/Badminton-3.jpg",
-      "categoryIds": [
-        1,
-        2
-      ],
+      "startTime": "2023-03-15T12:00",
+      "endTime": "2023-03-15T13:30",
       "location": "The Park",
-      "startTime": "2023-03-15T12:00:00.000Z",
-      "endTime": "2023-03-15T13:30:00.000Z"
+      "categoryIds": "2",
+      "createdBy": "1",
+      "id": "3"
     },
     {
       "id": "4",
@@ -66,7 +63,6 @@
       "endTime": "2023-03-09T07:00:00.000Z"
     },
     {
-      "id": "fe64",
       "title": "dsfgsdfgsd",
       "description": "hdfghdfg",
       "image": "https://images.pexels.com/photos/20107913/pexels-photo-20107913/free-photo-of-milosc-sztuka-lato-ogrod.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
@@ -74,7 +70,8 @@
       "endTime": "2024-02-15T19:27",
       "location": "Oss",
       "categoryIds": "2",
-      "createdBy": "1"
+      "createdBy": "2",
+      "id": "fe64"
     }
   ],
   "categories": [

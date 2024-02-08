@@ -10,7 +10,6 @@ import {
   RadioGroup,
   Text,
   Box,
-  color
 } from "@chakra-ui/react";
 import { EventCard } from "./Eventcard";
 import { Link } from "react-router-dom";
@@ -56,7 +55,6 @@ export const EventSearch = ({ events }) => {
   // Ref for scroll to top button
   const scrollToTopRef = useRef(null);
 
-  
   // Function to scroll to top
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: "smooth" });
@@ -65,7 +63,6 @@ export const EventSearch = ({ events }) => {
   return (
     <Flex
       direction="column"
-      paddingY={14} // Add vertical padding
       bg="gray.700" // Darker background color
       justifyContent="center"
       alignItems="center"
@@ -73,9 +70,23 @@ export const EventSearch = ({ events }) => {
       width="100vw"
       textColor={"white"}
     >
-      <Box mb={4}>
-        <InputGroup>
-          <InputLeftElement>🔍</InputLeftElement>
+      {/* Search bar */}
+      <Box
+        position="fixed"
+        top="2.5rem"
+        left="0"
+        right="0"
+        bg="gray.800" // Darker background color
+        paddingY={1} // Decreased vertical padding
+        paddingX={2} // Horizontal padding
+        zIndex={99}
+        display="flex"
+        justifyContent="space-between" // Align radio buttons to the right
+        width="100%" // Full width
+        marginBottom={4} // Added margin bottom
+      >
+        <InputGroup size="sm"> {/* Decreased input size */}
+          <InputLeftElement fontSize="sm">🔍</InputLeftElement> {/* Decreased font size */}
           <Input
             type="text"
             variant="filled"
@@ -85,53 +96,55 @@ export const EventSearch = ({ events }) => {
             onChange={handleChange}
           />
         </InputGroup>
+        <RadioGroup value={value} onChange={setValue} colorScheme="blue">
+          <Flex gap={2} wrap="no-wrap" alignItems="center" marginLeft={10}>
+            <Radio size="sm" value="all">All</Radio> {/* Decreased radio button size */}
+            <Radio size="sm" value="1">Sports</Radio>
+            <Radio size="sm" value="2">Games</Radio>
+            <Radio size="sm" value="3">Relaxation</Radio>
+          </Flex>
+        </RadioGroup>
       </Box>
 
-      <RadioGroup onChange={setValue} value={value} colorScheme="blue">
-        <Flex direction="row" gap={4} wrap="wrap" justifyContent="center">
-          <Radio value="all">All</Radio>
-          <Radio value="1">Sports</Radio>
-          <Radio value="2">Games</Radio>
-          <Radio value="3">Relaxation</Radio>
-        </Flex>
-      </RadioGroup>
-
-      <Box
-        overflowY="auto" // Enable vertical scrolling
-        width="100%"
-        paddingY={4} // Add vertical padding
-      >
-        <Flex
-          gap={8}
-          padding={4}
-          wrap="wrap"
-          justifyContent="center"
-          alignItems="center"
+      {/* Main content */}
+      <Box marginTop={10}> {/* Added top margin */}
+        <Box
+          overflowY="auto" // Enable vertical scrolling
+          width="100%"
+          paddingY={4} // Add vertical padding
         >
-          {matchedEvents.length === 0 && (
-            <Box>
-              <Flex
-                direction="column"
-                gap={4}
-                borderRadius={10}
-                justifyContent="center"
-                alignItems="center"
-                bg="white"
-                padding={6}
-                width="300px"
-              >
-                <Heading paddingBottom={4}>Auuch! </Heading>
-                <Text>No events of this kind were found...</Text>
-                <Button onClick={handleRefresh}>Try again</Button>
-              </Flex>
-            </Box>
-          )}
-          {matchedEvents.map((event) => (
-            <Link to={`/event/${event.id}`} key={event.id}>
-              <EventCard event={event} />
-            </Link>
-          ))}
-        </Flex>
+          <Flex
+            gap={8}
+            padding={4}
+            wrap="wrap"
+            justifyContent="center"
+            alignItems="center"
+          >
+            {matchedEvents.length === 0 && (
+              <Box>
+                <Flex
+                  direction="column"
+                  gap={4}
+                  borderRadius={10}
+                  justifyContent="center"
+                  alignItems="center"
+                  bg="gray.500"
+                  padding={6}
+                  width="300px"
+                >
+                  <Heading paddingBottom={4}>Auuch! </Heading>
+                  <Text>No events of this kind were found...</Text>
+                  <Button color="gray.400" onClick={handleRefresh}>Try again</Button>
+                </Flex>
+              </Box>
+            )}
+            {matchedEvents.map((event) => (
+              <Link to={`/event/${event.id}`} key={event.id}>
+                <EventCard event={event} />
+              </Link>
+            ))}
+          </Flex>
+        </Box>
       </Box>
 
       {/* Scroll to top button */}
@@ -144,8 +157,8 @@ export const EventSearch = ({ events }) => {
         zIndex="999"
         bgColor={"darkorange"}
         _hover={{
-          bgColor:"gray.800",
-          color:"darkorange"
+          bgColor: "gray.800",
+          color: "darkorange",
         }}
       >
         <FaArrowCircleUp />

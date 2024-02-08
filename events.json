@@ -24,17 +24,15 @@
       "id": "1"
     },
     {
-      "id": 2,
-      "createdBy": 1,
       "title": "Laser Tag mania",
       "description": "Let's play laser tag!",
       "image": "https://www.ctvnews.ca/polopoly_fs/1.5118552.1600965663!/httpImage/image.jpg_gen/derivatives/landscape_1020/image.jpg",
-      "categoryIds": [
-        2
-      ],
-      "location": "Blinded by the Lights Laser Tag, 15 Main St.",
       "startTime": "2023-04-06T18:46",
-      "endTime": "2023-04-06T17:46"
+      "endTime": "2023-04-06T21:46",
+      "location": "Blinded by the Lights Laser Tag, 15 Main St.",
+      "categoryIds": "3",
+      "createdBy": "2",
+      "id": "2"
     },
     {
       "title": "Badminton game",
@@ -70,6 +68,17 @@
       "categoryIds": "2",
       "createdBy": "2",
       "id": "fe64"
+    },
+    {
+      "id": "8ce7",
+      "title": "blabla",
+      "description": "bla",
+      "image": "https://images.pexels.com/photos/20107913/pexels-photo-20107913/free-photo-of-milosc-sztuka-lato-ogrod.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      "startTime": "2024-02-08T12:00",
+      "endTime": "2024-02-08T14:00",
+      "location": "Oss",
+      "categoryIds": "1",
+      "createdBy": "2"
     }
   ],
   "categories": [

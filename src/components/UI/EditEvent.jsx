@@ -50,6 +50,10 @@ export const EditEvent = ({ event }) => {
           duration: 3000,
           isClosable: true,
         });
+        // auto-refresh
+        setTimeout(() => {
+          window.location.reload();
+        }, 1000);
       } else {
         toast({
           title: "Error",

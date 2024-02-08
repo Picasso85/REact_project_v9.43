@@ -13,17 +13,15 @@
   ],
   "events": [
     {
-      "id": "1",
-      "createdBy": 1,
       "title": "Trampoline party",
       "description": "Bounce around with your friends",
       "image": "https://i.pinimg.com/736x/3d/2f/af/3d2faf4e3188d34a9fcdc00df59e77b0.jpg",
-      "categoryIds": [
-        2
-      ],
+      "startTime": "2023-03-10T14:00",
+      "endTime": "2023-03-10T17:00",
       "location": "My back yard",
-      "startTime": "2023-03-10T18:00",
-      "endTime": "2023-03-10T17:00:00.000Z"
+      "categoryIds": "1",
+      "createdBy": "2",
+      "id": "1"
     },
     {
       "id": 2,
@@ -45,8 +43,8 @@
       "startTime": "2023-03-15T12:00",
       "endTime": "2023-03-15T13:30",
       "location": "The Park",
-      "categoryIds": "2",
-      "createdBy": "1",
+      "categoryIds": "1",
+      "createdBy": "2",
       "id": "3"
     },
     {

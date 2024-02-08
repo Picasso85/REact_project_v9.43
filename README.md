@@ -26,7 +26,7 @@ If you have any questions, suggestions, or issues with the app, please contact u
 ![Screenshot 2024-02-02 195128](https://github.com/Picasso85/REact_Eind_project_v9.43/assets/93282468/020c52e1-fa3c-41ed-9e40-253f52ce154c)
 ![Screenshot 2024-02-02 195213](https://github.com/Picasso85/REact_Eind_project_v9.43/assets/93282468/307feeae-ce4a-4e0f-9033-7c60e96c242d)
 
-(some time leeter... )
+(some time laaaaater... )
 
 ![Screenshot 2024-02-08 132701](https://github.com/Picasso85/REact_Eind_project_v9.43/assets/93282468/c65e76b1-6181-4643-8523-fb5d0e1d6ee9)
 

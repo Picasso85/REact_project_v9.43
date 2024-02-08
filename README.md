@@ -40,9 +40,6 @@ some commands...
 - npm install
 - npm audit fix ( if something is wrong ;)) 
 
-
-Sure, here's the description translated into English:
-
 How to Work with React and JSON Server
 
 Download React Library: Firstly, download the React library.

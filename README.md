@@ -30,3 +30,63 @@ If you have any questions, suggestions, or issues with the app, please contact u
 
 ![Screenshot 2024-02-08 132701](https://github.com/Picasso85/REact_Eind_project_v9.43/assets/93282468/c65e76b1-6181-4643-8523-fb5d0e1d6ee9)
 
+how work ??
+
+ok let me think...
+
+some commands...
+- npm i -g json-server
+- npm install react-icons
+- npm install
+- npm audit fix ( if something is wrong ;)) 
+
+
+Sure, here's the description translated into English:
+
+How to Work with React and JSON Server
+
+Download React Library: Firstly, download the React library.
+
+Run JSON Server: Start the JSON Server using PowerShell by following these steps:
+
+Enter the command in the console: npx json-server events.json.
+If you see the following in the console:
+vbnet
+Copy code
+JSON Server started on PORT :3000
+Press CTRL-C to stop
+Watching events.json...
+
+( ˶ˆ ᗜ ˆ˵ )
+
+Index:
+http://localhost:3000/
+
+Static files:
+Serving ./public directory if it exists
+
+Endpoints:
+http://localhost:3000/users
+http://localhost:3000/events
+http://localhost:3000/categories
+it means that the JSON Server has been successfully started.
+Run React Project: Next, run the React project using another PowerShell by following these steps:
+
+Enter the command: npm run dev.
+If you see:
+css
+Copy code
+> exercise-proptypes@0.0.0 dev
+> vite   
+VITE v4.5.2  ready in 387 ms
+
+➜  Local:   http://localhost:5173/
+➜  Network: use --host to expose
+➜  press h to show help
+it means that the React project has been successfully started.
+Check Functionality: Now simply click the local URL to see the working application.
+
+Done!: Congratulations! You have successfully launched the React project with JSON Server. Now you can start working on your application.
+
+if have any problem just ask via e-mail....
+      

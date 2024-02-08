@@ -12,6 +12,10 @@ export const EventCard = ({ event }) => {
       paddingBottom={4} 
       align="center"
       transition="transform 0.3s ease, box-shadow 0.3s ease"
+      maxWidth="200px"
+      maxHeight="400px"
+      height="100%"
+
       _hover={{
         opacity: 0.9,
         transform: "rotate(5deg)",
@@ -24,18 +28,19 @@ export const EventCard = ({ event }) => {
         src={event.image}
         alt={event.title}
         boxSize="xs"
+        maxHeight="150px"
         borderTopRadius={6}
         transition="transform 0.3s ease"
         _hover={{ transform: 'scale(1.05)' }} // Zwiększenie obrazu przy najechaniu
       />
-      <Heading padding={4}>{event.title}</Heading>
+      <Heading padding={2} fontSize="lg">{event.title}</Heading>
       <Flex maxWidth="xs" wrap="wrap">
-        <Text align="center" transition="color 0.3s ease" _hover={{ color: 'blue.500' }}>{event.description}</Text> {/* Zmiana koloru tekstu przy najechaniu */}
+        <Text fontSize="xs" align="center" transition="color 0.3s ease" _hover={{ color: 'blue.500' }}>{event.description}</Text> {/* Zmiana koloru tekstu przy najechaniu */}
       </Flex>
 
       <br />
-      <p>📅 {date}</p>
-      <p>
+      <p style={{ fontSize: "10px" }}>📅 {date}</p>
+      <p style={{ fontSize: "10px" }}>
         🕑 {start} - {end}
       </p> 
       <br /> 🎯 click me

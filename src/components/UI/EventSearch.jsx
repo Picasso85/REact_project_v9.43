@@ -1,9 +1,7 @@
-import { useState } from "react";
+import React, { useState, useRef } from "react";
 import {
   Button,
   Flex,
-  Grid,
-  GridItem,
   Heading,
   Input,
   InputGroup,
@@ -11,10 +9,12 @@ import {
   Radio,
   RadioGroup,
   Text,
-  Box
+  Box,
+  color
 } from "@chakra-ui/react";
 import { EventCard } from "./Eventcard";
 import { Link } from "react-router-dom";
+import { FaArrowCircleUp } from "react-icons/fa";
 
 export const EventSearch = ({ events }) => {
   // Searchfield
@@ -52,6 +52,15 @@ export const EventSearch = ({ events }) => {
     const eventTitleJson = JSON.stringify(event.title);
     return eventTitleJson.toLowerCase().includes(searchField.toLowerCase());
   });
+
+  // Ref for scroll to top button
+  const scrollToTopRef = useRef(null);
+
+  
+  // Function to scroll to top
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
 
   return (
     <Flex
@@ -124,6 +133,23 @@ export const EventSearch = ({ events }) => {
           ))}
         </Flex>
       </Box>
+
+      {/* Scroll to top button */}
+      <Box ref={scrollToTopRef} />
+      <Button
+        onClick={scrollToTop}
+        position="fixed"
+        bottom="40px"
+        right="20px"
+        zIndex="999"
+        bgColor={"darkorange"}
+        _hover={{
+          bgColor:"gray.800",
+          color:"darkorange"
+        }}
+      >
+        <FaArrowCircleUp />
+      </Button>
     </Flex>
   );
 };

@@ -18,7 +18,7 @@ export const CategoryCard = ({ event }) => {
       {categoryList.map((category) => (
         <Tag
           key={category}
-          size="md"
+          size="sm"
           variant="outline"
           color="black"
           align="center"

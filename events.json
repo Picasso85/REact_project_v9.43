@@ -63,21 +63,32 @@
       "description": "hdfghdfg",
       "image": "https://images.pexels.com/photos/20107913/pexels-photo-20107913/free-photo-of-milosc-sztuka-lato-ogrod.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
       "startTime": "2024-02-07T19:27",
-      "endTime": "2024-02-15T19:27",
+      "endTime": "2024-02-15T23:27",
       "location": "Oss",
-      "categoryIds": "2",
-      "createdBy": "2",
+      "categoryIds": "1",
+      "createdBy": "1",
       "id": "fe64"
     },
     {
-      "id": "8ce7",
       "title": "blabla",
       "description": "bla",
       "image": "https://images.pexels.com/photos/20107913/pexels-photo-20107913/free-photo-of-milosc-sztuka-lato-ogrod.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
       "startTime": "2024-02-08T12:00",
       "endTime": "2024-02-08T14:00",
       "location": "Oss",
-      "categoryIds": "1",
+      "categoryIds": "3",
+      "createdBy": "2",
+      "id": "8ce7"
+    },
+    {
+      "id": "eb3a",
+      "title": "something",
+      "description": "blabla check it...",
+      "image": "https://images.pexels.com/photos/20107913/pexels-photo-20107913/free-photo-of-milosc-sztuka-lato-ogrod.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      "startTime": "2024-02-08T14:00",
+      "endTime": "2024-02-08T17:05",
+      "location": "s'Hertogenbosch",
+      "categoryIds": "2",
       "createdBy": "2"
     }
   ],

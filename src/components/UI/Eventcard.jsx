@@ -15,6 +15,8 @@ export const EventCard = ({ event }) => {
       maxWidth="200px"
       maxHeight="400px"
       height="100%"
+      mt={8}
+      mb={8}
 
       _hover={{
         opacity: 0.9,

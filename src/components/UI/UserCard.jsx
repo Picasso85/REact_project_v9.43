@@ -26,7 +26,7 @@ export const UserCard = ({ userId }) => {
   }
 
   return (
-    <Flex direction="row" align="center" gap={4}>
+    <Flex direction="row" align="center" gap={8} >
       <Image
         src={userData.image}
         alt={userData.name}

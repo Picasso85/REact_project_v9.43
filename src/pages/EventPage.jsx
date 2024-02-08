@@ -5,6 +5,7 @@ import { UserCard } from "../components/UI/UserCard";
 import { CategoryCard } from "../components/UI/CategoryCard";
 import { DeleteEvent } from "../components/UI/DeleteEvent";
 import { EditEvent } from "../components/UI/EditEvent";
+import { motion } from "framer-motion";
 
 // Loader function to fetch event data
 export const loader = async ({ params }) => {
@@ -25,8 +26,14 @@ export const EventPage = () => {
   const end = event.endTime.split("T")[1].slice(0, 5);
 
   return (
+    <motion.div
+  initial={{ x: "-100vw" }} // Początkowe położenie karty poza widokiem po lewej stronie
+  animate={{ x: 0 }} // Animacja przesunięcia karty w prawo do swojej pozycji końcowej
+  transition={{ duration: 0.5, type: "spring", stiffness: 120 }} // Konfiguracja animacji
+>
     // Main container flexbox
-    <Flex height="100vh" width="100vw" align="center" justify="center">
+    <Flex height="100vh" width="100vw" align="center" justify="center"
+    mb={14} mt={14}>
       {/* Event details container */}
       <Flex
         bg="white"
@@ -36,7 +43,7 @@ export const EventPage = () => {
         maxWidth="90vw" // Changed max width
         paddingY={8} // Added padding top and bottom
         borderRadius={10}
-        zIndex={1}
+        //zIndex={1}
         boxShadow="0px 4px 8px rgba(0, 0, 0, 0.5)" // Added shadow for better visual separation
       >
         {/* Event image */}
@@ -60,11 +67,11 @@ export const EventPage = () => {
           flexWrap="wrap"
           padding={4}
         >
-          <Text>📅 {date}</Text>
-          <Text>
+          <Text style={{ fontSize: "10px" }}>📅 {date}</Text>
+          <Text style={{ fontSize: "10px" }}>
             🕑 {start} - {end}
           </Text>
-          <Text align="center">📍 {event.location}</Text>
+          <Text style={{ fontSize: "10px" }}>📍 {event.location}</Text>
           {/* Display event category */}
           <CategoryCard event={event} />
         </Flex>
@@ -85,5 +92,6 @@ export const EventPage = () => {
         </Flex>
       </Flex>
     </Flex>
+    </motion.div>
   );
 };

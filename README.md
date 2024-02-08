@@ -18,7 +18,7 @@ Technical Requirements:
 The app is available on both iOS and Android platforms.
 An active internet connection is required to access the full range of features.
 Contact:
-If you have any questions, suggestions, or issues with the app, please contact us at pauladamskiblabla@gijiji.srum.
+If you have any questions, suggestions, or issues with the app, please contact us at pauladamski1985@gmail.com
 
 (old version)
 ![Screenshot 2024-02-02 195030](https://github.com/Picasso85/REact_Eind_project_v9.43/assets/93282468/576914c6-c603-4039-b534-6795ff8c5236)

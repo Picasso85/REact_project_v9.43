@@ -1,4 +1,4 @@
-Welcome to the "Events in Netherlands" app! Below you'll find some important information regarding the use of our application.
+Welcome to the "Events in Netherlands" app! Below you'll find some important information regarding the use of my application.
 
 About the App:
 The "Events in Netherlands" app is a tool that allows users to browse cultural, sports, artistic, and various other events happening in the Netherlands. Whether you're a tourist or a resident, our app will help you find interesting events in your area.
